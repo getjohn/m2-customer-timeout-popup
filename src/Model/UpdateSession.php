@@ -16,13 +16,15 @@ use Nanobots\SessionTimeoutPopup\Api\UpdateSessionInterface;
 
 class UpdateSession implements UpdateSessionInterface
 {
+    protected $customerSession;
+    
     /**
      * @param \Magento\Customer\Model\Session $customerSession
      */
     public function __construct(
-        protected Session $customerSession
+        Session $customerSession
     ) {
-
+        $this->customerSession = $customerSession;
     }
 
     /**
